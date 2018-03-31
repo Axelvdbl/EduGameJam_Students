@@ -3,15 +3,25 @@
     <ion-title>
       Dilemma
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only rigth (click)="logOut()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding style="background: #EFF0F1;">
-  <div padding>
 
-  </div>
+	<ion-card style="background-color: #2F2F2F">
+		<ion-card-content style="background-color: #2F2F2F">
+			<span ion-text style="text-align: center; color: white">
+				Liste des salles
+			</span>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngFor="let channel of channels" (click)="presentUserModal(channel.id, channel.name)">
+    <ion-card-content>
+      <span ion-item style="text-align: center">
+        {{channel.name}}
+      </span>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

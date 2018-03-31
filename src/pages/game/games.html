@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="dark">
+
+    <ion-title>Partie en cours</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-grid style="padding-top: 1em">
+	<ion-row>
+		<ion-col col-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12>
+			<ion-card style="background-color: #2F2F2F" *ngIf="questions">
+				<ion-card-content style="background-color: #2F2F2F; text-align: center; font-size: 150%">
+					<span ion-text style="color: white">
+						{{title}}
+					</span>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+
+	<ion-row style="padding-top: 2em">
+
+    <ion-col col-6 col-xs-6 col-sm-6 col-lg-6 col-xl-6>
+      <ion-card style="background-color: #2ECC40" (click)="increm_index()">
+				<ion-card-content style="background-color: #2ECC40; text-align: center; font-size: 150%">
+        <span ion-text style="color: white">
+					Oui
+				</span>
+			</ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col col-6 col-xs-6 col-sm-6 col-lg-6 col-xl-6>
+      <ion-card style="background-color: #FF4136" (click)="increm_index()">
+				<ion-card-content style="background-color: #FF4136; text-align: center; font-size: 150%">
+        <span ion-text style="color: white">
+					Non
+				</span>
+			</ion-card-content>
+			</ion-card>
+    </ion-col>
+
+  </ion-row>
+
+	<br><br><br><br><br>
+	<meter style="width: 100%; background: #FF6347" min="0" max="100" value="{{progress}}"></meter>
+	<div style="text-align: left">{{progress}}% ont voté Oui !</div>
+	<div style="text-align: right">{{100 - progress}}% ont voté Non !</div>
+
+	</ion-content>

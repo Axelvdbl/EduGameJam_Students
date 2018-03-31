@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Rejoindre la salle</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="student" (ngSubmit)="submit()">
+
+		<ion-item style="margin-top: 15px; border-top: 5px solid #2F2F2F; border-bottom: 5px solid #2F2F2F">
+			Veuillez inscrire votre prénom:
+		</ion-item>
+
+		  <ion-item>
+	      <ion-input type="text" formControlName="firstname" required></ion-input>
+	    </ion-item>
+
+			<ion-item style="margin-top: 15px; border-top: 5px solid #2F2F2F; border-bottom: 5px solid #2F2F2F">
+				Veuillez inscrire votre nom:
+			</ion-item>
+
+			<ion-item>
+				<ion-input type="text" formControlName="lastname" required></ion-input>
+			</ion-item>
+
+			<ion-card style="background-color: #2F2F2F" (click)="submit()">
+					<ion-card-content style="background-color: #2F2F2F; text-align: center">
+						<span ion-text style="color: white">
+							Enregistrer
+						</span>
+					</ion-card-content>
+			</ion-card>
+
+  </form>
+</ion-content>
